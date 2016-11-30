@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditScoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditScoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{scoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.id}" title="#{bundle.EditScoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_id}" required="true" requiredMessage="#{bundle.EditScoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditScoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_idjugador}" for="idjugador" />
+                    <h:inputText id="idjugador" value="#{scoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.idjugador}" title="#{bundle.EditScoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_idjugador}" />
+                    <h:outputLabel value="#{bundle.EditScoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_score}" for="score" />
+                    <h:inputText id="score" value="#{scoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.score}" title="#{bundle.EditScoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_score}" />
+                    <h:outputLabel value="#{bundle.EditScoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_idjuego}" for="idjuego" />
+                    <h:selectOneMenu id="idjuego" value="#{scoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.idjuego}" title="#{bundle.EditScoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_idjuego}" >
+                        <f:selectItems value="#{juegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{scoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.update}" value="#{bundle.EditScoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditScoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezViewLink}"/>
+                <br />
+                <h:commandLink action="#{scoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.prepareList}" value="#{bundle.EditScoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditScoreJuegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

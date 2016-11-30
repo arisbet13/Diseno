@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTorneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTorneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{torneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.id}" title="#{bundle.EditTorneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_id}" required="true" requiredMessage="#{bundle.EditTorneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditTorneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{torneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.nombre}" title="#{bundle.EditTorneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_nombre}" />
+                    <h:outputLabel value="#{bundle.EditTorneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_descripcion}" for="descripcion" />
+                    <h:inputText id="descripcion" value="#{torneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.descripcion}" title="#{bundle.EditTorneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_descripcion}" />
+                    <h:outputLabel value="#{bundle.EditTorneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_jugadores}" for="jugadores" />
+                    <h:inputText id="jugadores" value="#{torneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.jugadores}" title="#{bundle.EditTorneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_jugadores}" />
+                    <h:outputLabel value="#{bundle.EditTorneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_idjuego}" for="idjuego" />
+                    <h:selectOneMenu id="idjuego" value="#{torneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.idjuego}" title="#{bundle.EditTorneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_idjuego}" >
+                        <f:selectItems value="#{juegosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{torneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.update}" value="#{bundle.EditTorneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditTorneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezViewLink}"/>
+                <br />
+                <h:commandLink action="#{torneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.prepareList}" value="#{bundle.EditTorneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditTorneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

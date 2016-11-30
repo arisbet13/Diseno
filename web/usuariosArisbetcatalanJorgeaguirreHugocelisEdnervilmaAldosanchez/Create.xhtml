@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                   
+                    <h:outputLabel value="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{usuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.nombre}" title="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_nombre}" required="true" requiredMessage="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezRequiredMessage_nombre}"/>
+                    <h:outputLabel value="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_paterno}" for="paterno" />
+                    <h:inputText id="paterno" value="#{usuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.paterno}" title="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_paterno}" required="true" requiredMessage="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezRequiredMessage_paterno}"/>
+                    <h:outputLabel value="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_materno}" for="materno" />
+                    <h:inputText id="materno" value="#{usuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.materno}" title="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_materno}" required="true" requiredMessage="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezRequiredMessage_materno}"/>
+                    <h:outputLabel value="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_usuario}" for="usuario" />
+                    <h:inputText id="usuario" value="#{usuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.usuario}" title="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_usuario}" required="true" requiredMessage="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezRequiredMessage_usuario}"/>
+                    <h:outputLabel value="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_pass}" for="pass" />
+                    <h:inputText id="pass" value="#{usuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.pass}" title="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_pass}" required="true" requiredMessage="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezRequiredMessage_pass}"/>
+                    <h:outputLabel value="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_tipousuario}" for="tipousuario" />
+                    <h:selectOneMenu id="tipousuario" value="#{usuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.tipousuario}" title="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_tipousuario}" required="true" requiredMessage="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezRequiredMessage_tipousuario}">
+                        <f:selectItems value="#{tipoUsuarioArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{usuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.create}" value="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{usuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.prepareList}" value="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateUsuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

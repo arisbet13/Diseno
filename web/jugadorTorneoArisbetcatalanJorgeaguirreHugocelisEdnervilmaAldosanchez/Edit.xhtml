@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditJugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditJugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{jugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.id}" title="#{bundle.EditJugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_id}" required="true" requiredMessage="#{bundle.EditJugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditJugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_score}" for="score" />
+                    <h:inputText id="score" value="#{jugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.score}" title="#{bundle.EditJugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_score}" />
+                    <h:outputLabel value="#{bundle.EditJugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_idtorneo}" for="idtorneo" />
+                    <h:selectOneMenu id="idtorneo" value="#{jugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.idtorneo}" title="#{bundle.EditJugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_idtorneo}" >
+                        <f:selectItems value="#{torneosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditJugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_idjugador}" for="idjugador" />
+                    <h:selectOneMenu id="idjugador" value="#{jugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.idjugador}" title="#{bundle.EditJugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_idjugador}" >
+                        <f:selectItems value="#{usuariosArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{jugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.update}" value="#{bundle.EditJugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditJugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezViewLink}"/>
+                <br />
+                <h:commandLink action="#{jugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.prepareList}" value="#{bundle.EditJugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditJugadorTorneoArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

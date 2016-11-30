@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{noticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.id}" title="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_id}" required="true" requiredMessage="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_titulo}" for="titulo" />
+                    <h:inputText id="titulo" value="#{noticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.titulo}" title="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_titulo}" required="true" requiredMessage="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezRequiredMessage_titulo}"/>
+                    <h:outputLabel value="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_descripcion}" for="descripcion" />
+                    <h:inputText id="descripcion" value="#{noticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.descripcion}" title="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_descripcion}" required="true" requiredMessage="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezRequiredMessage_descripcion}"/>
+                    <h:outputLabel value="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_fecha}" for="fecha" />
+                    <h:inputText id="fecha" value="#{noticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.fecha}" title="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_fecha}" required="true" requiredMessage="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezRequiredMessage_fecha}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezLabel_autor}" for="autor" />
+                    <h:inputText id="autor" value="#{noticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.selected.autor}" title="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezTitle_autor}" required="true" requiredMessage="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezRequiredMessage_autor}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{noticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.update}" value="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezViewLink}"/>
+                <br />
+                <h:commandLink action="#{noticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezController.prepareList}" value="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditNoticiasArisbetcatalanJorgeaguirreHugocelisEdnervilmaAldosanchezIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
